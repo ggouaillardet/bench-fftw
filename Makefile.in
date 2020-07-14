@@ -1,0 +1,9 @@
+all: bench_fftw
+
+bench_fftw: bench_fftw.c
+	$(CC) -Ofast -o bench_fftw bench_fftw.c @@FFTW@@
+
+install: bench_fftw
+	mkdir -p @@PREFIX@@/bin
+	cp bench_fftw @@PREFIX@@/bin
+	
